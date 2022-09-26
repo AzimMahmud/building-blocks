@@ -1,6 +1,12 @@
-﻿namespace BuildingBlocks.Core.CQRS.Command;
+﻿using BuildingBlocks.Abstractions.CQRS.Command;
+using BuildingBlocks.Core.Types;
 
-public class InternalCommand
+namespace BuildingBlocks.Core.CQRS.Command;
+
+public class InternalCommand : IInternalCommand
 {
+    public Guid Id { get; protected set; } = Guid.NewGuid();
     
+    public DateTime OccurredOn { get; protected set; } = DateTime.Now;
+    public string Type { get { return TypeMapper.GetTypeName(GetType()); } }
 }
