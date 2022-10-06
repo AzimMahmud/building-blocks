@@ -1,6 +1,5 @@
 ﻿namespace BuildingBlocks.Abstractions.Messaging;
 
-public interface IBus
+public interface IBus : IBusProducer, IBusConsumer
 {
-    
 }

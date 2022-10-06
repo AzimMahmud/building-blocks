@@ -1,6 +1,26 @@
 ﻿namespace BuildingBlocks.Abstractions.Domain;
 
-public interface Identity
+public abstract record Identity<TId>
 {
-    
+    protected Identity(TId value) => Value = value;
+    public TId Value { get; protected set; }
+
+    public static implicit operator TId(Identity<TId> identityId) => identityId.Value;
+
+    public override string ToString()
+    {
+        return IdAsString();
+    }
+
+    private string IdAsString()
+    {
+        return $"{GetType().Name} [Id={Value}]";
+    }
+}
+
+public abstract record Identity : Identity<long>
+{
+    protected Identity(long value) : base(value)
+    {
+    }
 }

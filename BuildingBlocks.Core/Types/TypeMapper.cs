@@ -54,7 +54,7 @@ public class TypeMapper
     private static Type ToType(string typeName, Assembly? assembly)
         => _typeMap.GetOrAdd(typeName, _ =>
         {
-            Guard.AgainstNullOrEmpty(typeName, nameof(typeName));
+            Guard.Against.NullOrEmpty(typeName, nameof(typeName));
 
             return _typeMap.GetOrAdd(typeName, _ =>
             {
@@ -75,7 +75,7 @@ public class TypeMapper
 
     private static string ToName(Type type)
     {
-        Guard.AgainstNull(type, nameof(type));
+        Guard.Against.Null(type, nameof(type));
 
         return _typeNameMap.GetOrAdd(type, _ =>
         {

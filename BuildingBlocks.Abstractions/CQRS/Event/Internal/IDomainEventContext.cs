@@ -2,5 +2,6 @@
 
 public interface IDomainEventContext
 {
-    
+    IReadOnlyCollection<IDomainEvent> GetAllUnCommittedEvents();
+    void MarkUnCommittedDomainEventAsCommitted();
 }

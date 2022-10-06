@@ -1,6 +1,7 @@
 ﻿namespace BuildingBlocks.Abstractions.Messaging.PersistMessage;
 
-public class MessageStatus
+public enum MessageStatus
 {
-    
+    Stored = 1,
+    Processed = 2
 }

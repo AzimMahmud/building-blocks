@@ -1,6 +1,5 @@
 ﻿namespace BuildingBlocks.Abstractions.Domain;
 
-public class IHaveSoftDelete
+public interface IHaveSoftDelete
 {
-    
 }

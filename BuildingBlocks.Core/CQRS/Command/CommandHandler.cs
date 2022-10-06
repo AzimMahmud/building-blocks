@@ -3,7 +3,8 @@ using MediatR;
 
 namespace BuildingBlocks.Core.CQRS.Command;
 
-public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
+public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand>
+    where TCommand : ICommand
 {
     protected abstract Task<Unit> HandleCommandAsync(TCommand command, CancellationToken cancellationToken);
 
@@ -16,9 +17,10 @@ public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand> where
 public abstract class CommandHandler<TCommand, TResponse> : ICommandHandler<TCommand, TResponse>
     where TCommand : ICommand<TResponse>
     where TResponse : notnull
-
 {
-    protected abstract Task<TResponse> HandleCommandAsync(TCommand command, CancellationToken cancellationToken);
+    protected abstract Task<TResponse> HandleCommandAsync(
+        TCommand command,
+        CancellationToken cancellationToken = default);
 
     public Task<TResponse> Handle(TCommand request, CancellationToken cancellationToken)
     {

@@ -1,5 +1,5 @@
 ﻿using BuildingBlocks.Abstractions.CQRS.Command;
-using BuildingBlocks.Abstractions.Scheduling;
+using BuildingBlocks.Abstractions.Scheduler;
 using MediatR;
 
 namespace BuildingBlocks.Core.CQRS.Command;

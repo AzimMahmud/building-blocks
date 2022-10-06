@@ -1,6 +1,8 @@
 ﻿namespace BuildingBlocks.Abstractions.Messaging;
 
-public interface IIntegrationEvent
+/// <summary>
+/// The integration event interface.
+/// </summary>
+public interface IIntegrationEvent : IMessage
 {
-    
 }

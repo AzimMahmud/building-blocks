@@ -1,6 +1,9 @@
-﻿namespace BuildingBlocks.Abstractions.Messaging;
+﻿using MediatR;
 
-public interface IMessage
+namespace BuildingBlocks.Abstractions.Messaging;
+
+public interface IMessage : INotification
 {
-    
+    Guid MessageId { get; }
+    DateTime Created { get; }
 }

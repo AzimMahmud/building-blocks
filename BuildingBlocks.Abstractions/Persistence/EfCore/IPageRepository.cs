@@ -1,6 +1,14 @@
-﻿namespace BuildingBlocks.Abstractions.Persistence.EfCore;
+﻿using BuildingBlocks.Abstractions.Domain;
 
-public interface IPageRepository
+namespace BuildingBlocks.Abstractions.Persistence.EfCore;
+
+
+public interface IPageRepository<TEntity, TKey>
+    where TEntity : IHaveIdentity<TKey>
 {
-    
+}
+
+public interface IPageRepository<TEntity> : IPageRepository<TEntity, Guid>
+    where TEntity : IHaveIdentity<Guid>
+{
 }

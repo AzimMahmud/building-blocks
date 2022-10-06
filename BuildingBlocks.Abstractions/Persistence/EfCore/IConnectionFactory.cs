@@ -1,6 +1,8 @@
-﻿namespace BuildingBlocks.Abstractions.Persistence.EfCore;
+﻿using System.Data;
 
-public interface IConnectionFactory
+namespace BuildingBlocks.Abstractions.Persistence.EfCore;
+
+public interface IConnectionFactory : IDisposable
 {
-    
+    IDbConnection GetOrCreateConnection();
 }

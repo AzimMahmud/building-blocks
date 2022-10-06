@@ -1,6 +1,9 @@
 ﻿namespace BuildingBlocks.Abstractions.Messaging.PersistMessage;
 
-public class MessageDeliveryType
+[Flags]
+public enum MessageDeliveryType
 {
-    
+    Outbox = 1,
+    Inbox = 2,
+    Internal = 4
 }
