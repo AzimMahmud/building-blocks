@@ -1,6 +1,9 @@
-﻿namespace BuildingBlocks.Core.Messaging;
+﻿using BuildingBlocks.Abstractions.Messaging;
 
-public class Message
+namespace BuildingBlocks.Core.Messaging;
+
+public record Message : IMessage
 {
-    
+    public Guid MessageId => Guid.NewGuid();
+    public DateTime Created { get; } = DateTime.Now;
 }

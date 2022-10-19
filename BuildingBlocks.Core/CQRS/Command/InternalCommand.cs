@@ -3,7 +3,7 @@ using BuildingBlocks.Core.Types;
 
 namespace BuildingBlocks.Core.CQRS.Command;
 
-public class InternalCommand : IInternalCommand
+public record InternalCommand : IInternalCommand
 {
     public Guid Id { get; protected set; } = Guid.NewGuid();
     

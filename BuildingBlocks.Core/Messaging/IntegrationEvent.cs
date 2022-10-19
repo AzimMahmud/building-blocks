@@ -1,6 +1,5 @@
-﻿namespace BuildingBlocks.Core.Messaging;
+﻿using BuildingBlocks.Abstractions.Messaging;
 
-public class IntegrationEvent
-{
-    
-}
+namespace BuildingBlocks.Core.Messaging;
+
+public record IntegrationEvent : Message, IIntegrationEvent;

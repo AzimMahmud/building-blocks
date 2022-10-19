@@ -1,6 +1,8 @@
-﻿namespace BuildingBlocks.Core.CQRS.Event.Internal;
+﻿using BuildingBlocks.Abstractions.CQRS.Events.Internal;
+using BuildingBlocks.Core.Messaging;
 
-public class IntegrationEventWrapper
-{
-    
-}
+namespace BuildingBlocks.Core.CQRS.Event.Internal;
+
+public record IntegrationEventWrapper<TDomainEventType>
+    : IntegrationEvent
+    where TDomainEventType : IDomainEvent;

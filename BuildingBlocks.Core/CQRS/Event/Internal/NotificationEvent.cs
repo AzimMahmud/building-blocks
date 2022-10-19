@@ -1,6 +1,4 @@
 ﻿namespace BuildingBlocks.Core.CQRS.Event.Internal;
 
-public class NotificationEvent
-{
-    
-}
+// Just for executing after transaction
+public record NotificationEvent(dynamic Data) : DomainNotificationEvent;

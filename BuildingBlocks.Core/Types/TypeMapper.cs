@@ -65,7 +65,7 @@ public class TypeMapper
                         typeName.Replace("_", ".", StringComparison.Ordinal))!;
 
                 if (type is null)
-                    throw new Exception($"Type map for '{typeName}' wasn't found!");
+                    throw new System.Exception($"Type map for '{typeName}' wasn't found!");
                     
                 
 

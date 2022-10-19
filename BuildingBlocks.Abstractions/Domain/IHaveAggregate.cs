@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Abstractions.CQRS.Event.Internal;
+﻿using BuildingBlocks.Abstractions.CQRS.Events.Internal;
 
 namespace BuildingBlocks.Abstractions.Domain;
 
@@ -8,7 +8,7 @@ public interface IHaveAggregate : IHaveAggregateVersion
     /// Does the aggregate have change that have not been committed to storage
     /// </summary>
     /// <returns></returns>
-    public bool HasUnCommittedEvents();
+    public bool HasUncommittedDomainEvents();
     
     /// <summary>
     /// Gets a list of uncommitted events for this aggregate.

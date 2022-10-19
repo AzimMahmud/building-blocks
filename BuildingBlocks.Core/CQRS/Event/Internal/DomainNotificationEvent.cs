@@ -1,6 +1,5 @@
-﻿namespace BuildingBlocks.Core.CQRS.Event.Internal;
+﻿using BuildingBlocks.Abstractions.CQRS.Events.Internal;
 
-public class DomainNotificationEvent
-{
-    
-}
+namespace BuildingBlocks.Core.CQRS.Event.Internal;
+
+public abstract record DomainNotificationEvent : Event, IDomainNotificationEvent;
